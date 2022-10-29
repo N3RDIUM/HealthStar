@@ -31,7 +31,7 @@ export default StyleSheet.create({
         color: "#000",
         alignSelf: "center",
     },
-    GettingStartedContainer: {
+    Container: {
         backgroundColor: "#ddd",
         height: "100%",
         width: "100%",
@@ -59,5 +59,28 @@ export default StyleSheet.create({
         padding: "5%",
         borderRadius: 10,
         textAlign: "center",
+        flexDirection: "row",
+    },
+    GettingStartedBack: {
+        backgroundColor: "#0003",
+        color: "#fff",
+        fontSize: 18,
+        padding: "5%",
+        borderRadius: 10,
+        textAlign: "center",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "absolute",
+        top: "1%",
+        left: "1%",
+    },
+    SignUpContainer: {
+        backgroundColor: "#ddd",
+        height: "100%",
+        width: "100%",
+        justifyContent: "center",
+        alignItems: "center",
+        flex: 1
     },
 });
