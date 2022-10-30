@@ -4,6 +4,7 @@ import localdb from '../backend/localdb';
 import { Component } from 'react';
 
 import _index from '../Screens/_index';
+import DrawerNavigator from './DrawerNavigator';
 
 const Stack = createStackNavigator();
 
@@ -17,7 +18,7 @@ export default class MainStack extends Component {
     async componentDidMount() {
         onAuthStateChanged(localdb.auth, (user) => {
             if (user) {
-                this.setState({initialRouteName: 'Home'});
+                this.setState({initialRouteName: 'MainDrawer'});
             } else {
                 this.setState({initialRouteName: 'GettingStarted'});
             }
@@ -27,8 +28,7 @@ export default class MainStack extends Component {
         return (
             <Stack.Navigator initialRouteName={this.state.initialRouteName}>
                 <Stack.Screen name="GettingStarted" component={_index.GettingStarted} options={{headerShown: false}}/>
-                <Stack.Screen name="Home" component={_index.Home} options={{headerShown: false}}/>
-                <Stack.Screen name="Profile" component={_index.Profile} options={{headerShown: false}}/>
+                <Stack.Screen name="MainDrawer" component={DrawerNavigator} options={{headerShown: false}}/>
             </Stack.Navigator>
         );
     }

@@ -41,13 +41,6 @@ export default class Profile extends Component {
                     }}>
                         <Text>Sign Out</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity
-                        style={styles.GettingStartedButton} 
-                        onPress={() => {
-                        this.props.navigation.navigate("Home");
-                    }}>
-                        <Text>Back to Home</Text>
-                    </TouchableOpacity>
                 </View>
             </View>
         ): (

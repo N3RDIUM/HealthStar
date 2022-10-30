@@ -9,32 +9,6 @@ export default StyleSheet.create({
         backgroundColor: "#6190ff",
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
     },
-    HeaderContainer: {
-        backgroundColor: "#00289166",
-        height: "12%",
-        // glow below
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        blurRadius: 5,
-    },
-    HeaderView: {
-        backgroundColor: "#4079ffdd",
-        height: "50%",
-        justifyContent: "center",
-        flex: 0,
-        flexDirection: "row",
-    },
-    HeaderTitle: {
-        fontSize: 26.9,
-        fontWeight: "bold",
-        color: "#000",
-        alignSelf: "center",
-    },
     Container: {
         backgroundColor: "#fff",
         height: "100%",

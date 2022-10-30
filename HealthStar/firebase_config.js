@@ -22,9 +22,9 @@ localdb.db = db;
 
 _auth.onAuthStateChanged(auth, (user) => {
   if (user) {
-    localdb.user = user;
+    localdb.currentUser = user;
   } else {
-    localdb.user = null;
+    localdb.currentUser = null;
   }
 });
 

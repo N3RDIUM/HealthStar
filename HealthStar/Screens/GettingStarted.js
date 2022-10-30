@@ -41,7 +41,7 @@ function GoogleAuthButton({ navigation }) {
             localdb.auth,
             GoogleAuthProvider.credential(id_token)
           )
-          navigation.navigate("Home");
+          navigation.navigate("MainDrawer");
         });
     }
   }, [response]);
@@ -110,14 +110,14 @@ export default class GettingStarted extends Component {
   componentDidMount() {
     onAuthStateChanged(localdb.auth, (user) => {
       if (user) {
-        this.props.navigation.navigate("Home");
+        this.props.navigation.navigate("MainDrawer");
       }
     });
   }
   componentDidUpdate() {
     onAuthStateChanged(localdb.auth, (user) => {
       if (user) {
-        this.props.navigation.navigate("Home");
+        this.props.navigation.navigate("MainDrawer");
       }
     });
   }
