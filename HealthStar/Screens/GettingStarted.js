@@ -36,8 +36,6 @@ function GoogleAuthButton({ navigation }) {
         )
         .then((res) => {
           localdb.currentUser = res.data;
-          console.log("https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=" + id_token);
-          console.log(res.data);
           // sign in with credential from the Google user
           signInWithCredential(
             localdb.auth,

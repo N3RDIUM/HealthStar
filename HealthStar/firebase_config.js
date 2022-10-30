@@ -23,7 +23,6 @@ localdb.db = db;
 _auth.onAuthStateChanged(auth, (user) => {
   if (user) {
     localdb.user = user;
-    console.log(user);
   } else {
     localdb.user = null;
   }
