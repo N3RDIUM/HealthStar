@@ -3,7 +3,7 @@ import { Text, View, TouchableOpacity } from "react-native";
 import styles from "../Styles/default";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { createStackNavigator } from "@react-navigation/stack";
-import { onAuthStateChanged } from "@firebase/auth";
+import { onAuthStateChanged, signInWithCredential, GoogleAuthProvider } from "@firebase/auth";
 import * as AuthSession from "expo-auth-session";
 import * as Google from "expo-auth-session/providers/google";
 import * as WebBrowser from "expo-web-browser";
@@ -14,8 +14,7 @@ WebBrowser.maybeCompleteAuthSession();
 
 function GoogleAuthButton({ navigation }) {
   const [request, response, promptAsync] = Google.useIdTokenAuthRequest({
-    clientId:
-      "27072008479-ttmv3jgb7t9ksqeitojcj7400sp7pkq3.apps.googleusercontent.com",
+    clientId: "27072008479-ttmv3jgb7t9ksqeitojcj7400sp7pkq3.apps.googleusercontent.com",
     webClientId:
       "27072008479-ttmv3jgb7t9ksqeitojcj7400sp7pkq3.apps.googleusercontent.com",
     androidClientId:
@@ -37,6 +36,13 @@ function GoogleAuthButton({ navigation }) {
         )
         .then((res) => {
           localdb.currentUser = res.data;
+          console.log("https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=" + id_token);
+          console.log(res.data);
+          // sign in with credential from the Google user
+          signInWithCredential(
+            localdb.auth,
+            GoogleAuthProvider.credential(id_token)
+          )
           navigation.navigate("Home");
         });
     }
